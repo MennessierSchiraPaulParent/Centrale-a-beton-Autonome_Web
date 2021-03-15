@@ -18,7 +18,7 @@ namespace Donnevoleur
         {
 
             MySQLConnector database = new MySQLConnector("localhost","juif","root","");
-            Msg.Text = database.MySQLCheckLogin(UserName.Text, UserPass.Text).ToString();
+            //Msg.Text = database.MySQLCheckLogin(UserName.Text, UserPass.Text).ToString();
             /*
             if (FormsAuthentication.Authenticate(UserName.Text, UserPass.Text))
             {
