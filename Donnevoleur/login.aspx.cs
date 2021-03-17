@@ -17,17 +17,18 @@ namespace Donnevoleur
         protected void Login_Click(object sender, EventArgs e)
         {
 
-            MySQLConnector database = new MySQLConnector("localhost","juif","root","");
-            //Msg.Text = database.MySQLCheckLogin(UserName.Text, UserPass.Text).ToString();
-            /*
-            if (FormsAuthentication.Authenticate(UserName.Text, UserPass.Text))
+            MySQLConnector database = new MySQLConnector();
+            
+            if (database.MySQLCheckLogin(UserName.Text, UserPass.Text))
             {
+                //Regarder a quoi sert le FormsAuth
                 FormsAuthentication.RedirectFromLoginPage(UserName.Text, chkboxPersist.Checked);
+                Response.Redirect("commandList.aspx?parameter1="+ UserName.Text +"&parameter2=" + database.MySQLUserId(UserName.Text, UserPass.Text));
             }
             else
             {
                 Msg.Text = "Invalid User Name and/or Password";
-            }*/
+            }
         }
     }
 }

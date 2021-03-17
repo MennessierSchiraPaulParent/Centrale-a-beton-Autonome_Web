@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="welcome.aspx.cs" Inherits="Donnevoleur.welcome" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="commandList.aspx.cs" Inherits="Donnevoleur.welcome" %>
 
 <!DOCTYPE html>
 
@@ -11,6 +11,9 @@
     <form id="form1" runat="server">
         <div>
         </div>
+        <p>  
+                <asp:Label ID="Msg" ForeColor="red" runat="server" />  
+        </p>  
     </form>
 </body>
 </html>

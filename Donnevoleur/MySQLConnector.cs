@@ -21,31 +21,12 @@ namespace Donnevoleur
             this.database = database;
             this.user = user;
             this.password = password;
-            databaseString = "Server=" + ipServer + ";User ID=" + user + ";Password=" + password + ";Database=" +
-                             database;
-        }
-
-        public bool MySQLCheckLogin(string login, string password)
-        {
-            Connect();
-            string request = "Select * from utilisateur where login=" + login + " and password=" + password;
-            MySqlCommand cmd = new MySqlCommand(request, db);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            string verif = login + password;
-            reader.Read();
-            string verifbdd = reader[0] + "" + reader[1];
-            if (verif.Equals(verifbdd))
-            {
-                Disconnect();
-                return true;
-            }
-            Disconnect();
-            return false;
-
+            databaseString = "Server=" + ipServer + ";User ID=" + user + ";Password=" + password + ";Database=" + database;
         }
 
         public MySQLConnector()
         {
+            databaseString = "Server=localhost;User ID=root;Password=;Database=juif";
         }
         private void Connect()
         {
@@ -58,54 +39,74 @@ namespace Donnevoleur
             {
                 Console.WriteLine(ex.ToString());
             }
-
         }
         private void Disconnect()
         {
             db.Close();
         }
 
-        public void PremierTest()
+        public bool MySQLCheckLogin(string login, string password)
         {
             Connect();
-
-            Console.WriteLine("Première statement test :");
-            string statement = "SELECT * FROM commandes";
-            MySqlCommand cmd = new MySqlCommand(statement, db);
+            string request = "SELECT * from utilisateurs where login='" + login + "' and password='" + password + "'";
+            MySqlCommand cmd = new MySqlCommand(request, db);
             MySqlDataReader reader = cmd.ExecuteReader();
 
 
-            int i = 0;
-            while (reader.Read())
-            {
-                Console.WriteLine(reader[0] + "" + reader[1] + " " + reader[2] + " " + reader[3]);
-                i++;
-            }
-
-
-            Disconnect();
-        }
-
-
-        public void CheckDriverUID(string id)
-        {
-            Connect();
-
-            string statement = "SELECT * FROM commandes WHERE UID =" + id;
-            MySqlCommand cmd = new MySqlCommand(statement, db);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-
+            string verif = login + password;
+            string verifbdd = "";
             if (reader.Read())
             {
-                Console.WriteLine("ID Correct");
-            }
-            else
-            {
-                Console.WriteLine("Fake ID");
+                verifbdd = reader[0] + "" + reader[1];
             }
 
+            if (verif.Equals(verifbdd))
+            {
+                Disconnect();
+                return true;
+            }
             Disconnect();
+            return false;
         }
+
+        //Plus tard faire un tableau avec un renvoie du boolean et de la valeur id
+
+        public int MySQLUserId(string login, string password)
+        {
+            Connect();
+            string request = "SELECT * from utilisateurs where login='" + login + "' and password='" + password + "'";
+            MySqlCommand cmd = new MySqlCommand(request, db);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+
+            int id = 0;
+            if (reader.Read())
+            {
+              id = (int)reader[2];
+            }
+            Disconnect();
+            return id;
+        }
+        
+        public int MySQLCommandID(string userid)
+        {
+            Connect();
+            string request = "SELECT * from command_id where UserId='" +userid  + "'";
+            MySqlCommand cmd = new MySqlCommand(request, db);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            int id = 0;
+            if (reader.Read())
+            {
+                id = (int)reader[1];
+            }
+            Disconnect();
+            return id;
+
+        }
+
+
+
+
     }
 }

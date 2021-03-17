@@ -11,6 +11,11 @@ namespace Donnevoleur
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string username = Request.QueryString["parameter1"];
+            string id = Request.QueryString["parameter2"];
+
+            MySQLConnector database = new MySQLConnector();
+            Msg.Text = database.MySQLCommandID(id).ToString();
 
         }
     }
