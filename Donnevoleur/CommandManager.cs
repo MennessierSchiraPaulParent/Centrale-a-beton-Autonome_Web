@@ -10,7 +10,7 @@ namespace Donnevoleur
     {
         MySQLConnector connector;
         int userId;
-
+        
         public CommandManager(int userId)
         {
             this.connector = new MySQLConnector();
