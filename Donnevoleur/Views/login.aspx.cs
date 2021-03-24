@@ -23,7 +23,7 @@ namespace Donnevoleur
             {
                 //Regarder a quoi sert le FormsAuth
                 //FormsAuthentication.RedirectFromLoginPage(UserName.Text, chkboxPersist.Checked);
-                Response.Redirect("commandList.aspx?parameter1="+ UserName.Text +"&parameter2=" + usermanager.GetUserID(UserName.Text, UserPass.Text));
+                Response.Redirect("command.aspx?parameter1="+ UserName.Text +"&parameter2=" + usermanager.GetUserID(UserName.Text, UserPass.Text));
             }
             else
             {

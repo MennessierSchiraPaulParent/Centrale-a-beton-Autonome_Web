@@ -15,8 +15,6 @@ namespace Donnevoleur
             string id = Request.QueryString["parameter2"];
 
             CommandManager commandManager = new CommandManager(Int32.Parse(id));
-            Msg.Text = commandManager.getCommandID().ToString();
-
         }
     }
 }
