@@ -17,13 +17,13 @@ namespace Donnevoleur
         protected void Login_Click(object sender, EventArgs e)
         {
 
-            MySQLConnector database = new MySQLConnector();
+            UserManager usermanager = new UserManager();
             
-            if (database.MySQLCheckLogin(UserName.Text, UserPass.Text))
+            if (usermanager.ValidateUser(UserName.Text, UserPass.Text))
             {
                 //Regarder a quoi sert le FormsAuth
-                FormsAuthentication.RedirectFromLoginPage(UserName.Text, chkboxPersist.Checked);
-                Response.Redirect("commandList.aspx?parameter1="+ UserName.Text +"&parameter2=" + database.MySQLUserId(UserName.Text, UserPass.Text));
+                //FormsAuthentication.RedirectFromLoginPage(UserName.Text, chkboxPersist.Checked);
+                Response.Redirect("commandList.aspx?parameter1="+ UserName.Text +"&parameter2=" + usermanager.GetUserID(UserName.Text, UserPass.Text));
             }
             else
             {

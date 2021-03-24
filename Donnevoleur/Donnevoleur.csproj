@@ -116,6 +116,7 @@
     <Content Include="commandList.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandManager.cs" />
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -132,6 +133,7 @@
     <Compile Include="commandList.aspx.designer.cs">
       <DependentUpon>commandList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

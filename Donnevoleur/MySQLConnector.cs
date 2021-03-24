@@ -13,7 +13,7 @@ namespace Donnevoleur
         private string user;
         private string password;
         private string databaseString;
-        private MySqlConnection db;
+        public MySqlConnection db;
 
         public MySQLConnector(string ipServer, string database, string user, string password)
         {
@@ -26,9 +26,9 @@ namespace Donnevoleur
 
         public MySQLConnector()
         {
-            databaseString = "Server=localhost;User ID=root;Password=;Database=juif";
+            databaseString = "Server=localhost;User ID=root;Password=;Database=centrale_beton";
         }
-        private void Connect()
+        public void Connect()
         {
             try
             {
@@ -40,73 +40,9 @@ namespace Donnevoleur
                 Console.WriteLine(ex.ToString());
             }
         }
-        private void Disconnect()
+        public void Disconnect()
         {
             db.Close();
         }
-
-        public bool MySQLCheckLogin(string login, string password)
-        {
-            Connect();
-            string request = "SELECT * from utilisateurs where login='" + login + "' and password='" + password + "'";
-            MySqlCommand cmd = new MySqlCommand(request, db);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-
-            string verif = login + password;
-            string verifbdd = "";
-            if (reader.Read())
-            {
-                verifbdd = reader[0] + "" + reader[1];
-            }
-
-            if (verif.Equals(verifbdd))
-            {
-                Disconnect();
-                return true;
-            }
-            Disconnect();
-            return false;
-        }
-
-        //Plus tard faire un tableau avec un renvoie du boolean et de la valeur id
-
-        public int MySQLUserId(string login, string password)
-        {
-            Connect();
-            string request = "SELECT * from utilisateurs where login='" + login + "' and password='" + password + "'";
-            MySqlCommand cmd = new MySqlCommand(request, db);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-
-            int id = 0;
-            if (reader.Read())
-            {
-              id = (int)reader[2];
-            }
-            Disconnect();
-            return id;
-        }
-        
-        public int MySQLCommandID(string userid)
-        {
-            Connect();
-            string request = "SELECT * from command_id where UserId='" +userid  + "'";
-            MySqlCommand cmd = new MySqlCommand(request, db);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            int id = 0;
-            if (reader.Read())
-            {
-                id = (int)reader[1];
-            }
-            Disconnect();
-            return id;
-
-        }
-
-
-
-
     }
 }
