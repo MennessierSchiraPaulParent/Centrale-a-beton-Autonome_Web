@@ -10,9 +10,13 @@
       <h3>Création de commande </h3>
       <table>
           <tr><td>Quantitée</td>
+              <!--Faire ne sorte de ne pouvoir rentrer que des nombres  -->
           <td><asp:TextBox ID="Quantity" runat="server" /></td></tr>
       </table>
       <asp:Button ID="Submit2" OnClick="CommandCreate_Click" Text="Create" runat="server" />
     </form>
+      <p>
+                <asp:Label ID="Msg" ForeColor="red" runat="server" />
+            </p>
 </body>
 </html>

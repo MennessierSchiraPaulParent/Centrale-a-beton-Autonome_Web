@@ -13,7 +13,7 @@
             </a>
         </p>
         <p>
-            <a href="~/Home/ConsultCommande">
+            <a href="ConsultCommande.aspx">
                 <input type="button" value="Consultation des commandes" />
             </a>
         </p>

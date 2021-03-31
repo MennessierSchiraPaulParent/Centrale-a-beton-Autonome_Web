@@ -9,13 +9,14 @@ namespace Donnevoleur.Classes
     {
         private int userID;
         private string userName;
+        public MySQLConnector connector;
         //Rajouter des trucs a passer en paramètre
         public SessionObject(int userID, string userName)
         {
             this.userID = userID;
             this.userName = userName;
+            this.connector = new MySQLConnector();
         }
-
         public string getUserID()
         {
             return userID.ToString();

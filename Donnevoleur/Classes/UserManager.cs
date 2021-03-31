@@ -9,9 +9,9 @@ namespace Donnevoleur
     public class UserManager
     {
         MySQLConnector connector;
-        public UserManager()
+        public UserManager(MySQLConnector connector)
         {
-            this.connector = new MySQLConnector();
+            this.connector = connector;
         }
 
         public bool ValidateUser(string login, string password)

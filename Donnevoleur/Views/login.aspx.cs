@@ -13,15 +13,15 @@ namespace Donnevoleur
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
         protected void Login_Click(object sender, EventArgs e)
         {
 
-            UserManager usermanager = new UserManager();
+            UserManager usermanager = new UserManager(new MySQLConnector());
 
-            object userSessionObject = new SessionObject(usermanager.GetUserID(UserName.Text,UserPass.Text),UserName.Text);
-            HttpContext.Current.Session.Add("ID", userSessionObject);
+            object userSessionParametersObject = new SessionObject(usermanager.GetUserID(UserName.Text,UserPass.Text),UserName.Text);
+            HttpContext.Current.Session.Add("ID", userSessionParametersObject);
+
 
             if (usermanager.ValidateUser(UserName.Text, UserPass.Text))
             {

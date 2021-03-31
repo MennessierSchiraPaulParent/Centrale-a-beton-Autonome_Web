@@ -118,6 +118,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="Views\command.aspx" />
+    <Content Include="Views\ConsultCommande.aspx" />
     <Content Include="Views\creerCommande.aspx" />
     <Content Include="Views\login.aspx" />
     <Content Include="Web.config" />
@@ -131,6 +132,13 @@
     </Compile>
     <Compile Include="Views\command.aspx.designer.cs">
       <DependentUpon>command.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConsultCommande.aspx.cs">
+      <DependentUpon>ConsultCommande.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ConsultCommande.aspx.designer.cs">
+      <DependentUpon>ConsultCommande.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\creerCommande.aspx.cs">
       <DependentUpon>creerCommande.aspx</DependentUpon>

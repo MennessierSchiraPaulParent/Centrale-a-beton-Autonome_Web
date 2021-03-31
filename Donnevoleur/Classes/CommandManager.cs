@@ -10,10 +10,10 @@ namespace Donnevoleur
     {
         MySQLConnector connector;
         int userId;
-        //Test
-        public CommandManager(int userId)
+
+        public CommandManager(int userId, MySQLConnector connector)
         {
-            this.connector = new MySQLConnector();
+            this.connector = connector;
             this.userId = userId;
         }
 
@@ -31,6 +31,31 @@ namespace Donnevoleur
             }
             connector.Disconnect();
             return id;
+        }
+
+        public void createCommand(string quantity)
+        {
+            connector.Connect();
+            string request = "INSERT INTO commandesencours values('"+this.userId + "','','" + quantity +"')";
+            MySqlCommand cmd = new MySqlCommand(request, connector.db);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            connector.Disconnect();
+        }
+
+        public List<string> getCommandList()
+        {
+            connector.Connect();
+            string request = "select Quantite,IdCommande from commandesencours WHERE idUser='" +userId +"'";
+            List<string> commandList = new List<string>();
+            MySqlCommand cmd = new MySqlCommand(request, connector.db);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                commandList.Add(reader[0].ToString() + ":" + reader[1].ToString() +"<br/>");
+            }
+            connector.Disconnect();
+            return commandList;
+
         }
 
 

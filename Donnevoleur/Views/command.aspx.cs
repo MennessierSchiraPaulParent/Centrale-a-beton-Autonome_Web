@@ -13,13 +13,11 @@ namespace Donnevoleur
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            object userSessionObject = HttpContext.Current.Session["ID"];
-            SessionObject sessionObject = (SessionObject)userSessionObject;
+            object userSessionParametersObject = HttpContext.Current.Session["ID"];
+            SessionObject sessionObject = (SessionObject)userSessionParametersObject;
 
             Msg.Text = sessionObject.getUserID();
             Msg2.Text = sessionObject.getUserName();
-
-            //CommandManager commandManager = new CommandManager(Int32.Parse(id));
         }
     }
 }
