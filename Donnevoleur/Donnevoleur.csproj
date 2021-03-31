@@ -117,6 +117,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Views\Administration\UserCreation.aspx" />
+    <Content Include="Views\Administration\UserDeletion.aspx" />
+    <Content Include="Views\Administration\UserManagement.aspx" />
+    <Content Include="Views\adminPannel.aspx" />
     <Content Include="Views\command.aspx" />
     <Content Include="Views\ConsultCommande.aspx" />
     <Content Include="Views\creerCommande.aspx" />
@@ -126,6 +130,34 @@
   <ItemGroup>
     <Compile Include="Classes\CommandManager.cs" />
     <Compile Include="Classes\SessionObject.cs" />
+    <Compile Include="Views\Administration\UserCreation.aspx.cs">
+      <DependentUpon>UserCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administration\UserCreation.aspx.designer.cs">
+      <DependentUpon>UserCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administration\UserDeletion.aspx.cs">
+      <DependentUpon>UserDeletion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administration\UserDeletion.aspx.designer.cs">
+      <DependentUpon>UserDeletion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administration\UserManagement.aspx.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administration\UserManagement.aspx.designer.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\adminPannel.aspx.cs">
+      <DependentUpon>adminPannel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\adminPannel.aspx.designer.cs">
+      <DependentUpon>adminPannel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\command.aspx.cs">
       <DependentUpon>command.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

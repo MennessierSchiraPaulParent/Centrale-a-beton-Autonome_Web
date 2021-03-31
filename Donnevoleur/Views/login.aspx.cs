@@ -28,6 +28,10 @@ namespace Donnevoleur
             {
                 Response.Redirect("command.aspx");
             }
+            else if(usermanager.ValidateAdmin(UserName.Text, UserPass.Text))
+            {
+                Response.Redirect("adminPannel.aspx");
+            }
             else
             {
                 Msg.Text = "Invalid User Name and/or Password";
