@@ -17,16 +17,15 @@ namespace Donnevoleur
         protected void Login_Click(object sender, EventArgs e)
         {
 
+            //Utilisé pour initialiser seulement 2 fois le MysSQLConnector
             UserManager usermanager = new UserManager(new MySQLConnector());
-
+            //Permet de passer un objet dans la session afin de pouvoir le récupérer dans les différentes pages
             object userSessionParametersObject = new SessionObject(usermanager.GetUserID(UserName.Text,UserPass.Text),UserName.Text);
+            //Objet dans un dictionnaire avec un id nommé "ID"
             HttpContext.Current.Session.Add("ID", userSessionParametersObject);
-
 
             if (usermanager.ValidateUser(UserName.Text, UserPass.Text))
             {
-                //Regarder a quoi sert le FormsAuth
-                //FormsAuthentication.RedirectFromLoginPage(UserName.Text, chkboxPersist.Checked);
                 Response.Redirect("command.aspx");
             }
             else

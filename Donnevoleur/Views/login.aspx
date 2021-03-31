@@ -14,7 +14,7 @@
                                                       Display="Dynamic"
                                                       ErrorMessage="Cannot be empty."
                                                       runat="server" />
-                      </td>
+                    </td>
                     </tr>
                     <tr><td>Password:</td>
                         <td><asp:TextBox ID="UserPass" TextMode="Password" runat="server" /></td>
@@ -22,19 +22,16 @@
                                                         ControlToValidate="UserPass"
                                                         ErrorMessage="Cannot be empty."
                                                         runat="server" />
-                      </td>
+                    </td>
                     </tr>
-                <tr><td>Remember me?</td>
+                    <tr><td>Remember me?</td>
                     <td><asp:CheckBox ID="chkboxPersist" runat="server" /></td>
-                </tr>
+                    </tr>
             </table>
-
-                      <asp:Button ID="Submit1" OnClick="Login_Click" Text="Log In" runat="server" />
-
+                <asp:Button ID="Submit1" OnClick="Login_Click" Text="Log In" runat="server" />
             <p>
                 <asp:Label ID="Msg" ForeColor="red" runat="server" />
             </p>
-            
         </form>
     </body>
 </html>

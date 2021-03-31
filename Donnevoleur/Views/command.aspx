@@ -23,10 +23,7 @@
             </a>
         </p>
         <p style="margin : 50px auto 370px auto">
-
     </p>
-
     </section>
-    
 </body>
 </html>
