@@ -117,12 +117,28 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Views\command.aspx" />
+    <Content Include="Views\creerCommande.aspx" />
     <Content Include="Views\login.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Views\command.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CommandManager.cs" />
+    <Compile Include="Classes\SessionObject.cs" />
+    <Compile Include="Views\command.aspx.cs">
+      <DependentUpon>command.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\command.aspx.designer.cs">
+      <DependentUpon>command.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\creerCommande.aspx.cs">
+      <DependentUpon>creerCommande.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\creerCommande.aspx.designer.cs">
+      <DependentUpon>creerCommande.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -132,10 +148,6 @@
     </Compile>
     <Compile Include="Classes\MySQLConnector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\command.aspx.cs">
-      <DependentUpon>command.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Classes\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>

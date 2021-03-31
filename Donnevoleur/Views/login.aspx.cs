@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using Donnevoleur.Classes;
 
 namespace Donnevoleur
 {
@@ -18,12 +19,15 @@ namespace Donnevoleur
         {
 
             UserManager usermanager = new UserManager();
-            
+
+            object userSessionObject = new SessionObject(usermanager.GetUserID(UserName.Text,UserPass.Text),UserName.Text);
+            HttpContext.Current.Session.Add("ID", userSessionObject);
+
             if (usermanager.ValidateUser(UserName.Text, UserPass.Text))
             {
                 //Regarder a quoi sert le FormsAuth
                 //FormsAuthentication.RedirectFromLoginPage(UserName.Text, chkboxPersist.Checked);
-                Response.Redirect("command.aspx?parameter1="+ UserName.Text +"&parameter2=" + usermanager.GetUserID(UserName.Text, UserPass.Text));
+                Response.Redirect("command.aspx");
             }
             else
             {

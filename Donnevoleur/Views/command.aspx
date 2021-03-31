@@ -1,18 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="command.aspx.cs" Inherits="Donnevoleur.welcome" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="command.aspx.cs" Inherits="Donnevoleur.command" %>
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<link type='text/css' rel="stylesheet" href='Content/style.css' />
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
     <title></title>
 </head>
 <body>
     <section id="menuBout" style="margin : 50px auto 20px 40%">
-
         <p>
-            <a href="~/Home/CreerCommande">
-                <input type="button" value="Creation d'une commande" />
+            <a href="CreerCommande.aspx">
+                <input type="button"  value="Creation d'une commande" />
             </a>
         </p>
         <p>
@@ -25,17 +22,13 @@
                 <input type="button" value="Historique des commandes" />
             </a>
         </p>
-
-    </section>
-    <p style="margin : 50px auto 370px auto">
-
-        Quisque condimentum ex sed pharetra suscipit. Nulla facilisis lorem eu sapien venenatis dictum.
-        In congue augue posuere scelerisque molestie. Cras scelerisque, lectus ut ornare bibendum, mi magna placerat nunc,
-        vel aliquet est lectus sed turpis.Suspendisse posuere tempus orci, sed posuere turpis suscipit ac.
-        Quisque condimentum ex sed pharetra suscipit. Nulla facilisis lorem eu sapien venenatis dictum.
-        In congue augue posuere scelerisque molestie. Cras scelerisque, lectus ut ornare bibendum, mi magna placerat nunc,
-        vel aliquet est lectus sed turpis.Suspendisse posuere tempus orci, sed posuere turpis suscipit ac.
+        <p style="margin : 50px auto 370px auto">
+        <asp:Label ID="Msg" ForeColor="red" runat="server" />
+            <asp:Label ID="Msg2" ForeColor="red" runat="server" /> 
+         Oui
     </p>
 
+    </section>
+    
 </body>
 </html>
