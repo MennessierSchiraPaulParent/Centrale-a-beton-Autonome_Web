@@ -14,6 +14,7 @@ namespace Donnevoleur.Views
         {
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
             CommandManager commandManager = new CommandManager(Int32.Parse(userObject.getUserID()), userObject.connector);
+
             List<string> list = commandManager.getCommandList();
             foreach(string listdisplay in list)
             {

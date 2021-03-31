@@ -13,23 +13,5 @@ namespace Donnevoleur
 
     public partial class command
     {
-
-        /// <summary>
-        /// Contrôle Msg.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Msg;
-
-        /// <summary>
-        /// Contrôle Msg2.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Msg2;
     }
 }

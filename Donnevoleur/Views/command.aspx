@@ -23,9 +23,7 @@
             </a>
         </p>
         <p style="margin : 50px auto 370px auto">
-        <asp:Label ID="Msg" ForeColor="red" runat="server" />
-            <asp:Label ID="Msg2" ForeColor="red" runat="server" /> 
-         Oui
+
     </p>
 
     </section>
