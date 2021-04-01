@@ -13,6 +13,7 @@
         </div>
         <p>
                 <asp:Label ID="Msg" ForeColor="red" runat="server" />
+                <asp:Label ID="MsgTest" ForeColor="Red" runat="server" />
             </p>
     </form>
 </body>

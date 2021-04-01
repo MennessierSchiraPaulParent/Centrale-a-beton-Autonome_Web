@@ -21,4 +21,4 @@ namespace Donnevoleur.Views.Administration
             userManager.CreateUser(UserName.Text, Password.Text);
         }
     }
-}
+} 

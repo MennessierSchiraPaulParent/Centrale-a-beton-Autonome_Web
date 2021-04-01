@@ -19,7 +19,6 @@ namespace Donnevoleur.Views.Administration
             {
                 Msg.Text += listdisplay;
             }
-           
         }
     }
 }
