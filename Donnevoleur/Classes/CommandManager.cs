@@ -42,6 +42,13 @@ namespace Donnevoleur
             connector.Disconnect();
         }
 
+        public void deleteCommand(int commandId)
+        {
+            connector.Connect();
+            string request = "Delete * from commandesencours where IdCommande='" + commandId + "'";
+            MySqlCommand cmd = new MySqlCommand(request, connector.db);
+        }
+
         public List<string> getCommandList()
         {
             connector.Connect();
@@ -57,6 +64,9 @@ namespace Donnevoleur
             return commandList;
 
         }
+
+      
+
 
 
     }

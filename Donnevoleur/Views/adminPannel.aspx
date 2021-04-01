@@ -15,12 +15,12 @@
             </a>
         </p>
         <p>
-            <a href="~/Administration/UserDeletion.aspx">
+            <a href="./Administration/UserDeletion.aspx">
                 <input type="button" value="Suppression D'utilisateurs" />
             </a>
         </p>
         <p>
-            <a href="~/Administration/UserManagement.aspx">
+            <a href="./Administration/UserManagement.aspx">
                 <input type="button" value="Gestion Utilisateurs" />
             </a>
         </p>

@@ -18,7 +18,7 @@
             </a>
         </p>
         <p>
-            <a href="~/Home/HistoCommande">
+            <a href="UserManagement.aspx">
                 <input type="button" value="Historique des commandes" />
             </a>
         </p>

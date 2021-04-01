@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Donnevoleur.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,14 @@ namespace Donnevoleur.Views.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
+            UserManager userManager = new UserManager(userObject.connector);
+            List<string> list = userManager.GetUserList();
+            foreach(string listdisplay in list)
+            {
+                Msg.Text += listdisplay;
+            }
+           
         }
     }
 }

@@ -99,5 +99,23 @@ namespace Donnevoleur
                reader = command.ExecuteReader();   
             }
         }
+
+        public List<string> GetUserList()
+        {
+            connector.Connect();
+            string request = "select Login, idUser from utilisateurs";
+            List<string> userList = new List<string>();
+            MySqlCommand cmd = new MySqlCommand(request, connector.db);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            string buttonId;
+            int buttonNumber = 0;
+            while (reader.Read())
+            { 
+                buttonId = "user"+buttonNumber;
+                userList.Add("<input type =\"button\" value = \" "+ reader[0].ToString() +" "+ reader[1].ToString()+"\"/><br/>");
+            }
+            return userList;
+
+        }
     }
 }

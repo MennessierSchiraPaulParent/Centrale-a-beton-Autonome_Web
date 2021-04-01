@@ -11,6 +11,9 @@
     <form id="form1" runat="server">
         <div>
         </div>
+        <p>
+                <asp:Label ID="Msg" ForeColor="red" runat="server" />
+            </p>
     </form>
 </body>
 </html>
