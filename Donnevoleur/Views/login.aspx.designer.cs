@@ -78,6 +78,24 @@ namespace Donnevoleur
         protected global::System.Web.UI.WebControls.Button Submit1;
 
         /// <summary>
+        /// Contrôle Test.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Test;
+
+        /// <summary>
+        /// Contrôle UserListView.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView UserListView;
+
+        /// <summary>
         /// Contrôle Msg.
         /// </summary>
         /// <remarks>
