@@ -1,4 +1,4 @@
-﻿'-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Donnevoleur.login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Donnevoleur.login" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
@@ -29,15 +29,6 @@
                     </tr>
             </table>
                 <asp:Button ID="Submit1" OnClick="Login_Click" Text="Log In" runat="server" />
-            <!--
-            <asp:SqlDataSource ID="Test" runat="server" DataSourceMode="DataReader" ConnectionString="Server=localhost;Database=centrale_beton;User Id =root; password=;" 
-                SelectCommand="select Login from utilisateurs">
-            </asp:SqlDataSource>
-            
-            <asp:ListView ID="UserListView" runat="server" DataSourceID="Test" DataKeyNames="IdUser">
-               
-            </asp:ListView>
-            -->
             <p>
                 <asp:Label ID="Msg" ForeColor="red" runat="server" />
             </p>
