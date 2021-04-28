@@ -8,13 +8,11 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
         <div>
         </div>
-        <p>
+            <form action="UserAdministration.aspx" method="post" > 
                 <asp:Label ID="Msg" ForeColor="red" runat="server" />
                 <asp:Label ID="MsgTest" ForeColor="Red" runat="server" />
-            </p>
-    </form>
+                </form>
 </body>
 </html>

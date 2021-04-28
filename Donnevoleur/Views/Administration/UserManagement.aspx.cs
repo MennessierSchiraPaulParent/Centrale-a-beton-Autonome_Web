@@ -19,6 +19,9 @@ namespace Donnevoleur.Views.Administration
             {
                 Msg.Text += listdisplay;
             }
+
+            Button button = new Button();
+            button.
         }
     }
 }

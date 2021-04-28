@@ -11,8 +11,17 @@ namespace Donnevoleur.Views.Administration
 {
 
 
-    public partial class WebForm1
+    public partial class UserAdministration
     {
+
+        /// <summary>
+        /// Contrôle form1.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// Contrôle Msg.
@@ -22,14 +31,5 @@ namespace Donnevoleur.Views.Administration
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Msg;
-
-        /// <summary>
-        /// Contrôle MsgTest.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgTest;
     }
 }

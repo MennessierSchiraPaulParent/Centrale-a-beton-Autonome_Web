@@ -117,6 +117,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Views\Administration\UserAdministration.aspx" />
     <Content Include="Views\Administration\UserCreation.aspx" />
     <Content Include="Views\Administration\UserDeletion.aspx" />
     <Content Include="Views\Administration\UserManagement.aspx" />
@@ -130,6 +131,13 @@
   <ItemGroup>
     <Compile Include="Classes\CommandManager.cs" />
     <Compile Include="Classes\SessionObject.cs" />
+    <Compile Include="Views\Administration\UserAdministration.aspx.cs">
+      <DependentUpon>UserAdministration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administration\UserAdministration.aspx.designer.cs">
+      <DependentUpon>UserAdministration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administration\UserCreation.aspx.cs">
       <DependentUpon>UserCreation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

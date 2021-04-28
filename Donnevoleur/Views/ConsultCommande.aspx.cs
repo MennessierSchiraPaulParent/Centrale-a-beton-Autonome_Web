@@ -20,7 +20,6 @@ namespace Donnevoleur.Views
             {
                 Msg.Text += listdisplay;
             }
-            
         }
     }
 }
