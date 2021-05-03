@@ -12,6 +12,11 @@
         <asp:Label ID="Msg" ForeColor="red" runat="server" />
         <div>
         </div>
+        <asp:Button ID="CommandesEnCours" runat="server" OnClick="Button1_Click" Text="Commandes en cours" />
+        <p>
+        <asp:Button ID="CommandsHistory" runat="server" OnClick="Button2_Click" Text="Historique des commandes" />
+        </p>
+        <asp:Button ID="DeleteUser" runat="server" OnClick="Button3_Click" Text="Supprimer Utilisateur" />
     </form>
 </body>
 </html>

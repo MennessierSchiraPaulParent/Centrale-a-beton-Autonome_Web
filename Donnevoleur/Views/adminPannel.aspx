@@ -15,10 +15,7 @@
             </a>
         </p>
         <p>
-            <a href="./Administration/UserDeletion.aspx">
-                <input type="button" value="Suppression D'utilisateurs" />
-            </a>
-        </p>
+            &nbsp;</p>
         <p>
             <a href="./Administration/UserManagement.aspx">
                 <input type="button" value="Gestion Utilisateurs" />

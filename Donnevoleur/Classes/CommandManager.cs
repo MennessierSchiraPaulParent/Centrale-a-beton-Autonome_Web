@@ -58,16 +58,11 @@ namespace Donnevoleur
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                commandList.Add(reader[0].ToString() + ":" + reader[1].ToString() +"<br/>");
+                commandList.Add(reader[0].ToString() + ":" + reader[1].ToString());
             }
             connector.Disconnect();
             return commandList;
-
         }
-
-      
-
-
 
     }
 }

@@ -13,7 +13,20 @@ namespace Donnevoleur.Views.Administration
         protected void Page_Load(object sender, EventArgs e)
         { 
                 SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
-                Msg.Text = userObject.getAdminUserIdSelected().ToString();
+                Msg.Text = userObject.getAdminUserNameSelected();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UserCommand.aspx");
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

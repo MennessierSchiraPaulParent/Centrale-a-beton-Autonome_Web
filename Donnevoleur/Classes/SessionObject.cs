@@ -11,6 +11,7 @@ namespace Donnevoleur.Classes
         private string userName;
         public MySQLConnector connector;
         public int adminUserIdSelected;
+        public string adminUserNameSelected;
         //Rajouter des trucs a passer en paramètre
         public SessionObject(int userID, string userName)
         {
@@ -35,6 +36,15 @@ namespace Donnevoleur.Classes
         public void setAdminUserIdSelected(string id)
         {
             adminUserIdSelected = Int32.Parse(id); 
+        }
+
+        public void setAdminUserNameSelected(string name)
+        {
+            adminUserNameSelected = name;
+        }
+        public string getAdminUserNameSelected()
+        {
+            return adminUserNameSelected;
         }
     }
 }

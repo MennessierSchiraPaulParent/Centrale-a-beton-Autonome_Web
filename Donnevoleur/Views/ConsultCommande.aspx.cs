@@ -18,7 +18,7 @@ namespace Donnevoleur.Views
             List<string> list = commandManager.getCommandList();
             foreach(string listdisplay in list)
             {
-                Msg.Text += listdisplay;
+                Msg.Text += listdisplay +"<br>";
             }
         }
     }

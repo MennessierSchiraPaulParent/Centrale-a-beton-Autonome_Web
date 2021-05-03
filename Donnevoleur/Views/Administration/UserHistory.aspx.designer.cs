@@ -11,7 +11,7 @@ namespace Donnevoleur.Views.Administration
 {
 
 
-    public partial class WebForm1
+    public partial class UserHistory
     {
 
         /// <summary>
@@ -24,21 +24,12 @@ namespace Donnevoleur.Views.Administration
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Contrôle UserList.
+        /// Contrôle BulletedList1.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox UserList;
-
-        /// <summary>
-        /// Contrôle Validate.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Validate;
+        protected global::System.Web.UI.WebControls.BulletedList BulletedList1;
     }
 }

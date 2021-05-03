@@ -30,6 +30,7 @@ namespace Donnevoleur.Views.Administration
             int userListIndex = UserList.SelectedIndex;
             //Msg.Text = list[userListIndex].Substring(list[userListIndex].IndexOf(":")+1);
             userObject.setAdminUserIdSelected(list[userListIndex].Substring(list[userListIndex].IndexOf(":") + 1));
+            userObject.setAdminUserNameSelected(list[userListIndex].Substring(0, list[userListIndex].IndexOf(":")));
             Response.Redirect("UserAdministration.aspx");
         }
     }

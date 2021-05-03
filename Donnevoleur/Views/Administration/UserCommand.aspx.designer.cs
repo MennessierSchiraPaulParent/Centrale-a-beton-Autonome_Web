@@ -11,7 +11,7 @@ namespace Donnevoleur.Views.Administration
 {
 
 
-    public partial class UserAdministration
+    public partial class UserCommand
     {
 
         /// <summary>
@@ -24,39 +24,30 @@ namespace Donnevoleur.Views.Administration
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Contrôle Msg.
+        /// Contrôle Oui.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Msg;
+        protected global::System.Web.UI.WebControls.TextBox Oui;
 
         /// <summary>
-        /// Contrôle CommandesEnCours.
+        /// Contrôle CheckBoxList1.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CommandesEnCours;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
 
         /// <summary>
-        /// Contrôle CommandsHistory.
+        /// Contrôle Validate.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CommandsHistory;
-
-        /// <summary>
-        /// Contrôle DeleteUser.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteUser;
+        protected global::System.Web.UI.WebControls.Button Validate;
     }
 }

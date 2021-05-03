@@ -109,7 +109,6 @@ namespace Donnevoleur
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                //userList.Add("<input type =\"button\" value = \" "+ reader[0].ToString() +" "+ reader[1].ToString()+"\"/><br/>");
                 userList.Add(reader[0].ToString() +":"  + reader[1].ToString());
             }
             return userList;

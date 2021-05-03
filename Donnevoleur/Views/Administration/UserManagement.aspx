@@ -11,8 +11,7 @@
         <form id="form1" runat="server">
         <div>
         </div>
-                <asp:Label ID="Msg" ForeColor="red" runat="server" />
-                <asp:ListBox ID="UserList" runat="server"></asp:ListBox>
+                <asp:ListBox ID="UserList" runat="server" Height="540px" Width="204px"></asp:ListBox>
             <p>
                 <asp:Button OnClick="Validate_click" ID="Validate" runat="server" Text="Button" />
             </p>
