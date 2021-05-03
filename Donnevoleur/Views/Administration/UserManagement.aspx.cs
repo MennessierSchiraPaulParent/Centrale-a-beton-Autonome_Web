@@ -10,18 +10,27 @@ namespace Donnevoleur.Views.Administration
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        private SessionObject userObject;
+        private UserManager userManager;
+        private List<string> list;
         protected void Page_Load(object sender, EventArgs e)
-        {
-            SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
-            UserManager userManager = new UserManager(userObject.connector);
-            List<string> list = userManager.GetUserList();
-            foreach(string listdisplay in list)
-            {
-                Msg.Text += listdisplay;
+        { 
+            userObject = (SessionObject)HttpContext.Current.Session["ID"];
+            userManager = new UserManager(userObject.connector);
+            list = userManager.GetUserList();
+
+            foreach (string listdisplay in list)
+            {     
+                UserList.Items.Add(listdisplay.Substring(0, listdisplay.IndexOf(":")));
             }
 
-            Button button = new Button();
-            button.
+        }
+        protected void Validate_click(object sender, EventArgs e)
+        {
+            int userListIndex = UserList.SelectedIndex;
+            //Msg.Text = list[userListIndex].Substring(list[userListIndex].IndexOf(":")+1);
+            userObject.setAdminUserIdSelected(list[userListIndex].Substring(list[userListIndex].IndexOf(":") + 1));
+            Response.Redirect("UserAdministration.aspx");
         }
     }
 }

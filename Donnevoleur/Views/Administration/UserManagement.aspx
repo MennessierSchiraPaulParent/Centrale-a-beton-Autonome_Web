@@ -8,11 +8,14 @@
     <title></title>
 </head>
 <body>
+        <form id="form1" runat="server">
         <div>
         </div>
-            <form action="UserAdministration.aspx" method="post" > 
                 <asp:Label ID="Msg" ForeColor="red" runat="server" />
-                <asp:Label ID="MsgTest" ForeColor="Red" runat="server" />
-                </form>
+                <asp:ListBox ID="UserList" runat="server"></asp:ListBox>
+            <p>
+                <asp:Button OnClick="Validate_click" ID="Validate" runat="server" Text="Button" />
+            </p>
+        </form>
 </body>
 </html>
