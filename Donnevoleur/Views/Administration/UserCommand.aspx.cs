@@ -10,11 +10,14 @@ namespace Donnevoleur.Views.Administration
 {
     public partial class UserCommand : System.Web.UI.Page
     {
+        SessionObject userObject;
+        CommandManager commandManager;
+        List<string> commands = new List<string>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
-            CommandManager commandManager = new CommandManager(userObject.getAdminUserIdSelected(), userObject.connector);
-            List<string> commands = commandManager.getCommandList();
+            userObject = (SessionObject)HttpContext.Current.Session["ID"];
+            commandManager = new CommandManager(userObject.getAdminUserIdSelected(), userObject.connector);
+            commands = commandManager.getCommandList();
             foreach(string s in commands)
             {
                 CheckBoxList1.Items.Add(s);
@@ -23,16 +26,15 @@ namespace Donnevoleur.Views.Administration
 
         protected void Validate_click(object sender, EventArgs e)
         {
-            /*List<ListItem> selected = new List<ListItem>();*/
-            foreach(
-                ListItem item in CheckBoxList1.Items)
+            foreach(ListItem item in CheckBoxList1.Items)
             {
-
-                
-               /* selected.Add(item);*/
+                if (item.Selected)
+                {
+                    commandManager.deleteCommand(Int32.Parse(item.Text.Substring(item.Text.IndexOf(":") + 1)));
+                    Oui.Text = item.Text.Substring(item.Text.IndexOf(":") + 1);
+                }
             }
-
-
+            commands.Clear();
         }
     }
 
