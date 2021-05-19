@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -17,8 +18,10 @@ namespace Donnevoleur.Views.Administration
         {
             userObject = (SessionObject)HttpContext.Current.Session["ID"];
             commandManager = new CommandManager(userObject.getAdminUserIdSelected(), userObject.connector);
+            commands.Clear();
             commands = commandManager.getCommandList();
-            foreach(string s in commands)
+           // CheckBoxList1.Items.Clear();
+            foreach (string s in commands)
             {
                 CheckBoxList1.Items.Add(s);
             }
@@ -26,17 +29,16 @@ namespace Donnevoleur.Views.Administration
 
         protected void Validate_click(object sender, EventArgs e)
         {
-            foreach(ListItem item in CheckBoxList1.Items)
+            foreach (ListItem item in CheckBoxList1.Items)
             {
                 if (item.Selected)
                 {
+                    //Int32.Parse(item.Text.Substring(item.Text.IndexOf(":") + 1))
                     commandManager.deleteCommand(Int32.Parse(item.Text.Substring(item.Text.IndexOf(":") + 1)));
                     Oui.Text = item.Text.Substring(item.Text.IndexOf(":") + 1);
                 }
             }
-            commands.Clear();
+            //CheckBoxList1.ClearSelection();
         }
     }
-
-
 }
