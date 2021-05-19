@@ -15,6 +15,7 @@ namespace Donnevoleur.Views.Administration
         List<string> commands = new List<string>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //CheckBoxList1.Items.Clear();
             userObject = (SessionObject)HttpContext.Current.Session["ID"];
             commandManager = new CommandManager(userObject.getAdminUserIdSelected(), userObject.connector);
             commands = commandManager.getCommandList();
@@ -22,21 +23,17 @@ namespace Donnevoleur.Views.Administration
             {
                 CheckBoxList1.Items.Add(s);
             }
+            commands.Clear();
         }
-
         protected void Validate_click(object sender, EventArgs e)
         {
-            foreach(ListItem item in CheckBoxList1.Items)
+            foreach (ListItem item in CheckBoxList1.Items)
             {
                 if (item.Selected)
                 {
                     commandManager.deleteCommand(Int32.Parse(item.Text.Substring(item.Text.IndexOf(":") + 1)));
-                    Oui.Text = item.Text.Substring(item.Text.IndexOf(":") + 1);
                 }
             }
-            commands.Clear();
         }
     }
-
-
 }

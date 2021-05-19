@@ -45,8 +45,9 @@ namespace Donnevoleur
         public void deleteCommand(int commandId)
         {
             connector.Connect();
-            string request = "Delete * from commandesencours where IdCommande=\""+ commandId + "\"";
+            string request = "DELETE FROM commandesencours WHERE commandesencours.IdCommande = "+commandId;
             MySqlCommand cmd = new MySqlCommand(request, connector.db);
+            cmd.BeginExecuteNonQuery();
         }
 
         public List<string> getCommandList()
