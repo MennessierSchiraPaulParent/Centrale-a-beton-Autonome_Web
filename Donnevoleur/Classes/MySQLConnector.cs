@@ -26,7 +26,7 @@ namespace Donnevoleur
 
         public MySQLConnector()
         {
-            databaseString = "Server=localhost;User ID=root;Password=;Database=centrale_beton";
+            databaseString = "Server=localhost;User ID=install;Password=install;Database=centrale_beton";
         }
         public void Connect()
         {
