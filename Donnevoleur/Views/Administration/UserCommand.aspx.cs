@@ -18,9 +18,9 @@ namespace Donnevoleur.Views.Administration
         {
             userObject = (SessionObject)HttpContext.Current.Session["ID"];
             commandManager = new CommandManager(userObject.getAdminUserIdSelected(), userObject.connector);
-            commands.Clear();
+            //commands.Clear();
             commands = commandManager.getCommandList();
-           // CheckBoxList1.Items.Clear();
+            //CheckBoxList1.Items.Clear();
             foreach (string s in commands)
             {
                 CheckBoxList1.Items.Add(s);
@@ -39,6 +39,7 @@ namespace Donnevoleur.Views.Administration
                 }
             }
             //CheckBoxList1.ClearSelection();
+            Response.Redirect("UserCommand.aspx");
         }
     }
 }
