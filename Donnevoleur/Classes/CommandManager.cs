@@ -66,6 +66,20 @@ namespace Donnevoleur
             connector.Disconnect();
             return commandList;
         }
+        public int getLastCommand(int idUser)
+        {
+            int commandNumber = 0;
+            connector.Connect();
+            string request = "SELECT MAX(IdCommande) FROM commandesencours where idUser ="+idUser.ToString();
+            MySqlCommand cmd = new MySqlCommand(request, connector.db);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                commandNumber = Convert.ToInt32(reader[0]);
+            }
+            connector.Disconnect();
+            return commandNumber;
+        }
 
     }
 }

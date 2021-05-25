@@ -30,7 +30,7 @@ namespace barcodetest
 
             Barcode b = new Barcode();
             Image img = b.Encode(BarcodeLib.TYPE.EAN13, String.Format("{0:0}", code) + reader.ToString(), Color.Black, Color.White, 290, 120);
-            img.Save("toto2.png");
+            img.Save("toto1.png");
         }
     }
 }

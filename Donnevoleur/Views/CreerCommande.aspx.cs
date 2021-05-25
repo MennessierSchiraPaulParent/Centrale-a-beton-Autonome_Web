@@ -16,9 +16,18 @@ namespace Donnevoleur
         }
         protected void CommandCreate_Click(object sender, EventArgs e)
         {
+            BarCodeGenerator barCodeGenerator = new BarCodeGenerator();
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
             CommandManager commandManager = new CommandManager(Int32.Parse(userObject.getUserID()), userObject.connector);
             commandManager.createCommand(Quantity.Text);
+            //Création du code barre rattaché a la commande
+            int lastOrder = commandManager.getLastCommand(Int32.Parse(userObject.getUserID()));
+            barCodeGenerator.BuildBarCode(lastOrder);
+            
+            Response.ContentType = "image/jpeg";
+            Response.AppendHeader("Content-Disposition", "attachment; filename=commandNumber"+lastOrder+".png");
+            Response.TransmitFile(Server.MapPath("~/commandNumber"+lastOrder+".png"));
+            Response.End();
             Response.Redirect("command.aspx");
         }
     }
