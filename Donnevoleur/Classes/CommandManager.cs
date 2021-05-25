@@ -8,8 +8,8 @@ namespace Donnevoleur
 
     public class CommandManager
     {
-        MySQLConnector connector;
-        int userId;
+        public MySQLConnector connector;
+        public int userId;
 
         public CommandManager(int userId, MySQLConnector connector)
         {

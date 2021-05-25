@@ -26,11 +26,11 @@ namespace Donnevoleur
             //Objet dans un dictionnaire avec un id nommé "ID"
             HttpContext.Current.Session.Add("ID", userSessionParametersObject);
 
-            if (usermanager.ValidateUser(UserName.Text, UserPass.Text))
+            if (usermanager.validateUserType(UserName.Text, UserPass.Text,"user"))
             {
                 Response.Redirect("command.aspx");
             }
-            else if(usermanager.ValidateAdmin(UserName.Text, UserPass.Text))
+            else if(usermanager.validateUserType(UserName.Text, UserPass.Text,"admin"))
             {
                 Response.Redirect("adminPannel.aspx");
             }
@@ -38,6 +38,7 @@ namespace Donnevoleur
             {
                 Msg.Text = "Invalid User Name and/or Password";
             }
+
 
 
         }

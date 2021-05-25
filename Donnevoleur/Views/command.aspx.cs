@@ -13,8 +13,8 @@ namespace Donnevoleur
         protected void Page_Load(object sender, EventArgs e)
         {
             //Permettra par la suite de mettre un nom et un identifiant a l'affichage (sur le site)
-            object userSessionParametersObject = HttpContext.Current.Session["ID"];
-            SessionObject sessionObject = (SessionObject)userSessionParametersObject;
+            /*object userSessionParametersObject = HttpContext.Current.Session["ID"];
+            SessionObject sessionObject = (SessionObject)userSessionParametersObject;*/
         }
     }
 }

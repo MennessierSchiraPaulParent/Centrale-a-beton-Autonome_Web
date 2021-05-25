@@ -23,10 +23,6 @@
                                                         ErrorMessage="Cannot be empty."
                                                         runat="server" />
                     </td>
-                    </tr>
-                    <tr><td>Remember me?</td>
-                    <td><asp:CheckBox ID="chkboxPersist" runat="server" /></td>
-                    </tr>
             </table>
                 <asp:Button ID="Submit1" OnClick="Login_Click" Text="Log In" runat="server" />
             <p>
