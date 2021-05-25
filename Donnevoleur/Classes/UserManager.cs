@@ -77,7 +77,7 @@ namespace Donnevoleur
         public void CreateUser(string login, string password)
         {
             connector.Connect();
-            string request = "INSERT into utilisateurs values('"+login+"','"+password+"','')";
+            string request = "INSERT into utilisateurs(Login,Password) values('"+login+"','"+password+"')";
             MySqlCommand cmd = new MySqlCommand(request, connector.db);
             MySqlDataReader reader = cmd.ExecuteReader();
             connector.Disconnect();
@@ -85,19 +85,12 @@ namespace Donnevoleur
         public void DelUser(int idUser)
         {
             connector.Connect();
-            string request1 = "delete * from utilisateurs where idUser = '" + idUser + "'";
-            string request2 = "delete * from historiquecommandes where idUser = '" + idUser + "'";
-            string request3 = "delete * from commandesencours where idUser = '" + idUser + "'";
-            List<MySqlCommand> cmdList = new List<MySqlCommand>();
-            cmdList.Add(new MySqlCommand(request1, connector.db));
-            cmdList.Add(new MySqlCommand(request2, connector.db));
-            cmdList.Add(new MySqlCommand(request3, connector.db));
-
-            MySqlDataReader reader;
-            foreach(MySqlCommand command in cmdList)
-            {
-               reader = command.ExecuteReader();   
-            }
+            string request = "delete from utilisateurs where idUser = '" + idUser + "';" +
+                "delete from historiquecommandes where idUser = '" + idUser + "';" +
+                "delete from commandesencours where idUser = '" + idUser + "'";
+            MySqlCommand cmd = new MySqlCommand(request, connector.db);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            connector.Disconnect();
         }
 
         public List<string> GetUserList()
@@ -111,6 +104,7 @@ namespace Donnevoleur
             {
                 userList.Add(reader[0].ToString() +":"  + reader[1].ToString());
             }
+            connector.Disconnect();
             return userList;
         }
     }

@@ -26,7 +26,9 @@ namespace Donnevoleur.Views.Administration
         }
         protected void Button3_Click(object sender, EventArgs e)
         {
-
+            SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
+            UserManager userManager = new UserManager(userObject.connector);
+            userManager.DelUser(userObject.adminUserIdSelected);
         }
     }
 }

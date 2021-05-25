@@ -36,7 +36,8 @@ namespace Donnevoleur
         public void createCommand(string quantity)
         {
             connector.Connect();
-            string request = "INSERT INTO commandesencours values('"+this.userId + "','','" + quantity +"')";
+            //Bonne requete mon reuf
+            string request = "INSERT INTO commandesencours (idUser,Quantite) values('"+this.userId + "','" + quantity +"')";
             MySqlCommand cmd = new MySqlCommand(request, connector.db);
             MySqlDataReader reader = cmd.ExecuteReader();
             connector.Disconnect();
