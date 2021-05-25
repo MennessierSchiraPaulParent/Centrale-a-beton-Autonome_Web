@@ -22,13 +22,14 @@ namespace Donnevoleur
             commandManager.createCommand(Quantity.Text);
             //Création du code barre rattaché a la commande
             int lastOrder = commandManager.getLastCommand(Int32.Parse(userObject.getUserID()));
-            barCodeGenerator.BuildBarCode(lastOrder);
+            Msg.Text = lastOrder.ToString();
+            //barCodeGenerator.BuildBarCode(lastOrder);
             
-            Response.ContentType = "image/jpeg";
+            /*Response.ContentType = "image/jpeg";
             Response.AppendHeader("Content-Disposition", "attachment; filename=commandNumber"+lastOrder+".png");
             Response.TransmitFile(Server.MapPath("~/commandNumber"+lastOrder+".png"));
             Response.End();
-            Response.Redirect("command.aspx");
+            Response.Redirect("command.aspx");*/
         }
     }
 }
