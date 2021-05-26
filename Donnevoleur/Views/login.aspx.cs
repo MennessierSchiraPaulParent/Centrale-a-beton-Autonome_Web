@@ -38,9 +38,6 @@ namespace Donnevoleur
             {
                 Msg.Text = "Invalid User Name and/or Password";
             }
-
-
-
         }
     }
 }

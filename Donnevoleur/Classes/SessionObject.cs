@@ -33,15 +33,15 @@ namespace Donnevoleur.Classes
             return adminUserIdSelected;
         }
 
-        /*public void setAdminUserIdSelected(string id)
+        public void setAdminUserIdSelected(string id)
         {
-            adminUserIdSelected = Int32.Parse(id); 
+            adminUserIdSelected = Int32.Parse(id);
         }
 
         public void setAdminUserNameSelected(string name)
         {
             adminUserNameSelected = name;
-        }*/
+        }
         public string getAdminUserNameSelected()
         {
             return adminUserNameSelected;
