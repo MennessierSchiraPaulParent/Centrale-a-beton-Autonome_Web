@@ -22,15 +22,14 @@ namespace Donnevoleur
             BarCodeGenerator barCodeGenerator = new BarCodeGenerator();
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
             CommandManager commandManager = new CommandManager(Int32.Parse(userObject.getUserID()), userObject.connector);
-            commandManager.createCommand(Quantity.Text);
-            int lastOrder = commandManager.getLastCommand(Int32.Parse(userObject.getUserID()));
-            commandManager.createCommandBarCode(barCodeGenerator.GenerateBareCode(lastOrder));
-            
-            //Création du code barre rattaché a la commande
-            
-            Msg.Text = lastOrder.ToString();
 
-            System.Drawing.Image image = barCodeGenerator.BuildBarCode(lastOrder);
+            commandManager.createCommand(Quantity.Text);
+            int lastOrderID = commandManager.getLastCommand(Int32.Parse(userObject.getUserID()));
+            commandManager.createCommandBarCode(barCodeGenerator.GenerateBareCode(lastOrderID));
+            
+            Msg.Text = lastOrderID.ToString();
+          
+            System.Drawing.Image image = barCodeGenerator.BuildBarCode(lastOrderID);
             
             Response.Clear();
             Response.ContentType = "image/png";
@@ -38,7 +37,6 @@ namespace Donnevoleur
             byte[] bytes = (byte[])(new ImageConverter()).ConvertTo(image, typeof(byte[]));
             Response.BinaryWrite(bytes);
             Response.End();
-
         }
     }
 }
