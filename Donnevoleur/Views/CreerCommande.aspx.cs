@@ -23,8 +23,11 @@ namespace Donnevoleur
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
             CommandManager commandManager = new CommandManager(Int32.Parse(userObject.getUserID()), userObject.connector);
             commandManager.createCommand(Quantity.Text);
-            //Création du code barre rattaché a la commande
             int lastOrder = commandManager.getLastCommand(Int32.Parse(userObject.getUserID()));
+            commandManager.createCommandBarCode(barCodeGenerator.GenerateBareCode(lastOrder));
+            
+            //Création du code barre rattaché a la commande
+            
             Msg.Text = lastOrder.ToString();
 
             System.Drawing.Image image = barCodeGenerator.BuildBarCode(lastOrder);

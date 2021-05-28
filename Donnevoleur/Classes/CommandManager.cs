@@ -33,11 +33,20 @@ namespace Donnevoleur
             return id;
         }
 
+        public void createCommandBarCode(string codeBar)
+        {
+            connector.Connect();
+            //Bonne requete mon reuf
+            string request = "update commandesencours set CodeBarre ="+codeBar+" where IdCommande = (Select MAX(IdCommande) from commandesencours where idUser = "+this.userId+")";
+            MySqlCommand cmd = new MySqlCommand(request, connector.db);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            connector.Disconnect();
+        }
         public void createCommand(string quantity)
         {
             connector.Connect();
             //Bonne requete mon reuf
-            string request = "INSERT INTO commandesencours (idUser,Quantite) values('"+this.userId + "','" + quantity +"')";
+            string request = "INSERT INTO commandesencours (idUser,Quantite) values('" + this.userId + "','" + quantity +"')";
             MySqlCommand cmd = new MySqlCommand(request, connector.db);
             MySqlDataReader reader = cmd.ExecuteReader();
             connector.Disconnect();
@@ -80,6 +89,6 @@ namespace Donnevoleur
             connector.Disconnect();
             return commandNumber;
         }
-
+        
     }
 }

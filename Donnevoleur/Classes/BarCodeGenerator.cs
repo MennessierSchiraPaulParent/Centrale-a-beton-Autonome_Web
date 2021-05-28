@@ -15,14 +15,20 @@ namespace Donnevoleur.Classes
         }
         public Image BuildBarCode(int idCommande)
         {
-            Random rd = new Random();
             Barcode b = new Barcode();
-
-            double randomRange2 = Math.Pow(10, (12 - Math.Floor(Math.Log10(idCommande) + 1)));
-            double code = Math.Abs(rd.NextDouble() * (randomRange2 - 0) + 0);
-            Image img = b.Encode(BarcodeLib.TYPE.EAN13, String.Format("{0:00}", code) + idCommande.ToString(), Color.Black, Color.White, 290, 120);
+            Image img = b.Encode(BarcodeLib.TYPE.EAN13, GenerateBareCode(idCommande) , Color.Black, Color.White, 290, 120);
             return img;
 
         }
+        public string GenerateBareCode(int idCommande)
+        {
+            Random rd = new Random();
+            
+            double randomRange2 = Math.Pow(10, (12 - Math.Floor(Math.Log10(idCommande) + 1)));
+            double code = Math.Abs(rd.NextDouble() * (randomRange2 - 0) + 0);
+
+            return String.Format("{0:00}", code) + idCommande.ToString();
+        }
+
     }
 }
