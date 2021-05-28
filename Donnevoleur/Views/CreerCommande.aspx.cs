@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 using Donnevoleur.Classes;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
 
 namespace Donnevoleur
 {
@@ -23,13 +26,16 @@ namespace Donnevoleur
             //Création du code barre rattaché a la commande
             int lastOrder = commandManager.getLastCommand(Int32.Parse(userObject.getUserID()));
             Msg.Text = lastOrder.ToString();
-            //barCodeGenerator.BuildBarCode(lastOrder);
+
+            System.Drawing.Image image = barCodeGenerator.BuildBarCode(lastOrder);
             
-            /*Response.ContentType = "image/jpeg";
-            Response.AppendHeader("Content-Disposition", "attachment; filename=commandNumber"+lastOrder+".png");
-            Response.TransmitFile(Server.MapPath("~/commandNumber"+lastOrder+".png"));
+            Response.Clear();
+            Response.ContentType = "image/png";
+            Response.AppendHeader("Content-Disposition", "attachment; filename=downloadedFile.png");
+            byte[] bytes = (byte[])(new ImageConverter()).ConvertTo(image, typeof(byte[]));
+            Response.BinaryWrite(bytes);
             Response.End();
-            Response.Redirect("command.aspx");*/
+
         }
     }
 }
