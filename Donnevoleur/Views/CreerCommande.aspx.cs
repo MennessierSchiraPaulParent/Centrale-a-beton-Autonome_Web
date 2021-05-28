@@ -19,17 +19,18 @@ namespace Donnevoleur
         }
         protected void CommandCreate_Click(object sender, EventArgs e)
         {
-            BarCodeGenerator barCodeGenerator = new BarCodeGenerator();
+           
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
             CommandManager commandManager = new CommandManager(Int32.Parse(userObject.getUserID()), userObject.connector);
 
             commandManager.createCommand(Quantity.Text);
             int lastOrderID = commandManager.getLastCommand(Int32.Parse(userObject.getUserID()));
-            commandManager.createCommandBarCode(barCodeGenerator.GenerateBareCode(lastOrderID));
+            BarCodeGenerator barCodeGenerator = new BarCodeGenerator(lastOrderID);
+            commandManager.createCommandBarCode(barCodeGenerator.barcodecode + barCodeGenerator.controlKeystr);
             
             Msg.Text = lastOrderID.ToString();
           
-            System.Drawing.Image image = barCodeGenerator.BuildBarCode(lastOrderID);
+            System.Drawing.Image image = barCodeGenerator.barcodeImage;
             
             Response.Clear();
             Response.ContentType = "image/png";
