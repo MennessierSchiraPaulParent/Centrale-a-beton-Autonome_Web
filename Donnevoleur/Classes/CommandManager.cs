@@ -37,9 +37,19 @@ namespace Donnevoleur
         {
             connector.Connect();
             //Bonne requete mon reuf
-            string request = "update commandesencours set CodeBarre ="+codeBar+" where IdCommande = (Select MAX(IdCommande) from commandesencours where idUser = "+this.userId+")";
+            int idCommande = 0;
+            //string request = "update commandesencours set CodeBarre ="+codeBar+" where IdCommande = (Select MAX(IdCommande) from commandesencours where idUser = "+this.userId+")";
+            string request = "Select MAX(IdCommande) from commandesencours where idUser = " + this.userId;
             MySqlCommand cmd = new MySqlCommand(request, connector.db);
             MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                idCommande = Int32.Parse(reader[0].ToString());
+            }
+            request = "update commandesencours set CodeBarre =" + codeBar + " where IdCommande =" + idCommande;
+            reader.Close();
+            cmd = new MySqlCommand(request, connector.db);
+            reader = cmd.ExecuteReader(); 
             connector.Disconnect();
         }
         public void createCommand(string quantity)
