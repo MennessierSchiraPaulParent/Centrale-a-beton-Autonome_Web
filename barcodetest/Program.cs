@@ -32,7 +32,6 @@ namespace barcodetest
             Image img = b.Encode(BarcodeLib.TYPE.EAN13, Math.Round(code,0).ToString() + reader.ToString(), Color.Black, Color.White, 290, 120);
             img.Save("toto1.png");
 
-           
         }
         public static int controlkey(int reader, double code)
         {

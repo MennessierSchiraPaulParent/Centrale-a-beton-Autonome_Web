@@ -144,11 +144,11 @@
     <Content Include="Views\Administration\UserDeletion.aspx" />
     <Content Include="Views\Administration\UserHistory.aspx" />
     <Content Include="Views\Administration\UserManagement.aspx" />
-    <Content Include="Views\adminPannel.aspx" />
-    <Content Include="Views\command.aspx" />
-    <Content Include="Views\ConsultCommande.aspx" />
-    <Content Include="Views\creerCommande.aspx" />
-    <Content Include="Views\login.aspx" />
+    <Content Include="Views\Administration\adminPannel.aspx" />
+    <Content Include="Views\Utilisateurs\command.aspx" />
+    <Content Include="Views\Utilisateurs\ConsultCommande.aspx" />
+    <Content Include="Views\Utilisateurs\creerCommande.aspx" />
+    <Content Include="Views\Utilisateurs\login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -197,39 +197,39 @@
     <Compile Include="Views\Administration\UserManagement.aspx.designer.cs">
       <DependentUpon>UserManagement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\adminPannel.aspx.cs">
+    <Compile Include="Views\Administration\adminPannel.aspx.cs">
       <DependentUpon>adminPannel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\adminPannel.aspx.designer.cs">
+    <Compile Include="Views\Administration\adminPannel.aspx.designer.cs">
       <DependentUpon>adminPannel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\command.aspx.cs">
+    <Compile Include="Views\Utilisateurs\command.aspx.cs">
       <DependentUpon>command.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\command.aspx.designer.cs">
+    <Compile Include="Views\Utilisateurs\command.aspx.designer.cs">
       <DependentUpon>command.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\ConsultCommande.aspx.cs">
+    <Compile Include="Views\Utilisateurs\ConsultCommande.aspx.cs">
       <DependentUpon>ConsultCommande.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\ConsultCommande.aspx.designer.cs">
+    <Compile Include="Views\Utilisateurs\ConsultCommande.aspx.designer.cs">
       <DependentUpon>ConsultCommande.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\creerCommande.aspx.cs">
+    <Compile Include="Views\Utilisateurs\creerCommande.aspx.cs">
       <DependentUpon>creerCommande.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\creerCommande.aspx.designer.cs">
+    <Compile Include="Views\Utilisateurs\creerCommande.aspx.designer.cs">
       <DependentUpon>creerCommande.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\login.aspx.cs">
+    <Compile Include="Views\Utilisateurs\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\login.aspx.designer.cs">
+    <Compile Include="Views\Utilisateurs\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\MySQLConnector.cs" />
