@@ -32,7 +32,7 @@ namespace Donnevoleur
             }
             else if(usermanager.validateUserType(UserName.Text, UserPass.Text,"admin"))
             {
-                Response.Redirect("adminPannel.aspx");
+                Response.Redirect("../Administration/adminPannel.aspx");
             }
             else
             {

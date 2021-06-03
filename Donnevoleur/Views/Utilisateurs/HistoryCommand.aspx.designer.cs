@@ -7,11 +7,11 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace Donnevoleur.Views.Administration
+namespace Donnevoleur.Views.Utilisateurs
 {
 
 
-    public partial class UserHistory
+    public partial class HistoryCommand
     {
 
         /// <summary>
@@ -22,15 +22,6 @@ namespace Donnevoleur.Views.Administration
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// Contrôle BulletedList1.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedList1;
 
         /// <summary>
         /// Contrôle Msg.

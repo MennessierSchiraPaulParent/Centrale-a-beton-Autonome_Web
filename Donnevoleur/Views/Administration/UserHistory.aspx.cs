@@ -16,11 +16,11 @@ namespace Donnevoleur.Views.Administration
             CommandManager commandManager = new CommandManager(userObject.getAdminUserIdSelected(), userObject.connector);
 
             //Remplacer par l'historique (historyCommandList)
-            List<string> commandList = commandManager.getCommandList();
+            List<string> commandList = commandManager.getHistoryList();
 
             foreach(string s in commandList)
             {
-               //faire les bails
+                Msg.Text += s + "<br>";
             }
         }
     }

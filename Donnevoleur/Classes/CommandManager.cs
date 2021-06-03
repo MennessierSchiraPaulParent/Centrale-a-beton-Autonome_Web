@@ -85,6 +85,20 @@ namespace Donnevoleur
             connector.Disconnect();
             return commandList;
         }
+        public List<string> getHistoryList()
+        {
+            connector.Connect();
+            string request = "select IdCommande,Quantite from historiquecommandes WHERE idUser='" + userId + "'";
+            List<string> historyList = new List<string>();
+            MySqlCommand cmd = new MySqlCommand(request, connector.db);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                historyList.Add(reader[0].ToString() + ":" + reader[1].ToString());
+            }
+            connector.Disconnect();
+            return historyList;
+        }
         public int getLastCommand(int idUser)
         {
             int commandNumber = 0;

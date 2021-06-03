@@ -18,7 +18,7 @@
             </a>
         </p>
         <p>
-            <a href="UserManagement.aspx">
+            <a href="HistoryCommand.aspx">
                 <input type="button" value="Historique des commandes" />
             </a>
         </p>

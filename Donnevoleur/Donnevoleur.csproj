@@ -132,12 +132,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Content\style.css" />
     <Content Include="Views\Administration\UserAdministration.aspx" />
     <Content Include="Views\Administration\UserCommand.aspx" />
     <Content Include="Views\Administration\UserCreation.aspx" />
@@ -148,12 +142,14 @@
     <Content Include="Views\Utilisateurs\command.aspx" />
     <Content Include="Views\Utilisateurs\ConsultCommande.aspx" />
     <Content Include="Views\Utilisateurs\creerCommande.aspx" />
+    <Content Include="Views\Utilisateurs\HistoryCommand.aspx" />
     <Content Include="Views\Utilisateurs\login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BarCodeGenerator.cs" />
     <Compile Include="Classes\CommandManager.cs" />
+    <Compile Include="Classes\Mohamed.cs" />
     <Compile Include="Classes\SessionObject.cs" />
     <Compile Include="Views\Administration\UserAdministration.aspx.cs">
       <DependentUpon>UserAdministration.aspx</DependentUpon>
@@ -225,6 +221,13 @@
     <Compile Include="Views\Utilisateurs\creerCommande.aspx.designer.cs">
       <DependentUpon>creerCommande.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Utilisateurs\HistoryCommand.aspx.cs">
+      <DependentUpon>HistoryCommand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Utilisateurs\HistoryCommand.aspx.designer.cs">
+      <DependentUpon>HistoryCommand.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Utilisateurs\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -237,10 +240,6 @@
     <Compile Include="Classes\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="libman.json" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
@@ -276,6 +275,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties libman_1json__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

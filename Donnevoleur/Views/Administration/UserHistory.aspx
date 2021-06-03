@@ -12,6 +12,7 @@
         <div>
             <asp:BulletedList ID="BulletedList1" runat="server">
             </asp:BulletedList>
+            <asp:Label ID="Msg" ForeColor="Red" runat="server"></asp:Label>
         </div>
     </form>
 </body>

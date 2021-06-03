@@ -10,14 +10,14 @@
 <body>
      <section id="menuBout" style="margin : 50px auto 20px 40%">
         <p>
-            <a href="./Administration/UserCreation.aspx">
+            <a href="../Administration/UserCreation.aspx">
                 <input type="button"  value="Création d'utilisateurs" />
             </a>
         </p>
         <p>
             &nbsp;</p>
         <p>
-            <a href="./Administration/UserManagement.aspx">
+            <a href="../Administration/UserManagement.aspx">
                 <input type="button" value="Gestion Utilisateurs" />
             </a>
         </p>
