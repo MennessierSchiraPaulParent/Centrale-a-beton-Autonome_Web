@@ -21,6 +21,15 @@ namespace Donnevoleur.Classes
         {
             this.disconnectButton = "<style>.valide {float:right;}</style > <div class=\"valide\"> <a href="+urlreturn +"> <input type=\"button\"  value=\"Back\"/></a></div>";
         }
+        public void createHomeAdmin()
+        {
+            this.disconnectButton = "<style>.valide {float:right;}</style > <div class=\"valide\"> <a href=\"adminPannel.aspx\" > <input type=\"button\"  value=\"Home\"/></a></div>";
+        }
+        public void createHomeUser()
+        {
+            this.disconnectButton = "<style>.valide {float:right;}</style > <div class=\"valide\"> <a href=\"command.aspx\" > <input type=\"button\"  value=\"Home\"/></a></div>";
+
+        }
         public string getButton()
         {
             return this.disconnectButton;

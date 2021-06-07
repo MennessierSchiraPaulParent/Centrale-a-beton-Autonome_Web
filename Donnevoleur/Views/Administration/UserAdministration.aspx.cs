@@ -16,6 +16,8 @@ namespace Donnevoleur.Views.Administration
             ButtonGenerate button = new ButtonGenerate();
             button.createReturn(referer);
             DynButton.Text = button.getButton();
+            button.createHomeAdmin();
+            DynButton2.Text = button.getButton();
 
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
             Msg.Text = userObject.getAdminUserNameSelected();

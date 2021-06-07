@@ -7,6 +7,7 @@
 </head>
   <body>
       <asp:Label ID="DynButton" ForeColor="red" runat="server" />
+      <asp:Label ID="DynButton2" ForeColor="red" runat="server" />
     <form id="form2" runat="server">
       <h3>Création de commande </h3>
       <table>

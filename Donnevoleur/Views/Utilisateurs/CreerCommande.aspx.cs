@@ -20,6 +20,8 @@ namespace Donnevoleur
             ButtonGenerate button = new ButtonGenerate();
             button.createReturn(referer);
             DynButton.Text = button.getButton();
+            button.createHomeAdmin();
+            DynButton2.Text = button.getButton();
         }
         protected void CommandCreate_Click(object sender, EventArgs e)
         {

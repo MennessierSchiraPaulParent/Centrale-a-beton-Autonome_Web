@@ -9,6 +9,7 @@
 </head>
 <body>
     <asp:Label ID="DynButton" ForeColor="red" runat="server" />
+    <asp:Label ID="DynButton2" ForeColor="red" runat="server" />
     <form id="form1" runat="server">
         <asp:Label ID="Msg" ForeColor="red" runat="server" />
         <div>
