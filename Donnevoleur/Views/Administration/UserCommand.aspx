@@ -8,6 +8,7 @@
     <title></title>
 </head>
 <body>
+    <asp:Label ID="DynButton" ForeColor="red" runat="server" />
     <form id="form1" runat="server">
         <div>
         </div>

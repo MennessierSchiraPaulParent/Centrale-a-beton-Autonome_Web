@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HistoryCommand.aspx.cs" Inherits="Donnevoleur.Views.Utilisateurs.HistoryCommand" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Disconnect.aspx.cs" Inherits="Donnevoleur.Views.Utilisateurs.Disconnect" %>
 
 <!DOCTYPE html>
 
@@ -8,9 +8,7 @@
     <title></title>
 </head>
 <body>
-    <asp:Label ID="DynButton" ForeColor="red" runat="server" />
     <form id="form1" runat="server">
-        <asp:Label ID="Msg" ForeColor="Red" runat="server"></asp:Label>
         <div>
         </div>
     </form>

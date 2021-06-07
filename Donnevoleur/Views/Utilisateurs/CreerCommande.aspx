@@ -6,12 +6,18 @@
     <title></title>
 </head>
   <body>
+      <asp:Label ID="DynButton" ForeColor="red" runat="server" />
     <form id="form2" runat="server">
       <h3>Création de commande </h3>
       <table>
           <tr><td>Quantitée</td>
               <!--Faire ne sorte de ne pouvoir rentrer que des nombres  -->
           <td><asp:TextBox ID="Quantity" runat="server" /></td></tr>
+                                  <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
+                            ControlToValidate="Quantity" runat="server"
+                            ErrorMessage="Only Numbers allowed"
+                            ValidationExpression="\d+">
+                        </asp:RegularExpressionValidator>
       </table>
       <asp:Button ID="Submit2" OnClick="CommandCreate_Click" Text="Create" runat="server" />
     </form>

@@ -12,6 +12,11 @@ namespace Donnevoleur.Views.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string referer = Request.UrlReferrer.ToString();
+            ButtonGenerate button = new ButtonGenerate();
+            button.createReturn(referer);
+            DynButton.Text = button.getButton();
+
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
             CommandManager commandManager = new CommandManager(userObject.getAdminUserIdSelected(), userObject.connector);
 

@@ -8,6 +8,7 @@
     <title></title>
 </head>
 <body>
+    <asp:Label ID="DynButton" ForeColor="red" runat="server" />
      <section id="menuBout" style="margin : 50px auto 20px 40%">
         <p>
             <a href="../Administration/UserCreation.aspx">

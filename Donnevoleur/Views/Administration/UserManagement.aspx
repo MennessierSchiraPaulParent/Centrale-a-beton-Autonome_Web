@@ -8,12 +8,13 @@
     <title></title>
 </head>
 <body>
+    <asp:Label ID="DynButton" ForeColor="red" runat="server" />
         <form id="form1" runat="server">
         <div>
         </div>
                 <asp:ListBox ID="UserList" runat="server" Height="540px" Width="204px"></asp:ListBox>
             <p>
-                <asp:Button OnClick="Validate_click" ID="Validate" runat="server" Text="Button" />
+                <asp:Button OnClick="Validate_click" ID="Validate" runat="server" Text="Select" />
             </p>
         </form>
 </body>

@@ -132,6 +132,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Administration\Disconnect.aspx" />
     <Content Include="Views\Administration\UserAdministration.aspx" />
     <Content Include="Views\Administration\UserCommand.aspx" />
     <Content Include="Views\Administration\UserCreation.aspx" />
@@ -142,6 +143,7 @@
     <Content Include="Views\Utilisateurs\command.aspx" />
     <Content Include="Views\Utilisateurs\ConsultCommande.aspx" />
     <Content Include="Views\Utilisateurs\creerCommande.aspx" />
+    <Content Include="Views\Utilisateurs\Disconnect.aspx" />
     <Content Include="Views\Utilisateurs\HistoryCommand.aspx" />
     <Content Include="Views\Utilisateurs\login.aspx" />
     <Content Include="Web.config" />
@@ -149,7 +151,15 @@
   <ItemGroup>
     <Compile Include="Classes\BarCodeGenerator.cs" />
     <Compile Include="Classes\CommandManager.cs" />
+    <Compile Include="Classes\ButtonGenerate.cs" />
     <Compile Include="Classes\SessionObject.cs" />
+    <Compile Include="Views\Administration\Disconnect.aspx.cs">
+      <DependentUpon>Disconnect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administration\Disconnect.aspx.designer.cs">
+      <DependentUpon>Disconnect.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administration\UserAdministration.aspx.cs">
       <DependentUpon>UserAdministration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -219,6 +229,13 @@
     </Compile>
     <Compile Include="Views\Utilisateurs\creerCommande.aspx.designer.cs">
       <DependentUpon>creerCommande.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilisateurs\Disconnect.aspx.cs">
+      <DependentUpon>Disconnect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Utilisateurs\Disconnect.aspx.designer.cs">
+      <DependentUpon>Disconnect.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Utilisateurs\HistoryCommand.aspx.cs">
       <DependentUpon>HistoryCommand.aspx</DependentUpon>

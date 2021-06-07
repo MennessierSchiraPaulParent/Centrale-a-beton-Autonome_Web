@@ -11,9 +11,14 @@ namespace Donnevoleur.Views.Administration
     public partial class UserAdministration : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        { 
-                SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
-                Msg.Text = userObject.getAdminUserNameSelected();
+        {
+            string referer = Request.UrlReferrer.ToString();
+            ButtonGenerate button = new ButtonGenerate();
+            button.createReturn(referer);
+            DynButton.Text = button.getButton();
+
+            SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
+            Msg.Text = userObject.getAdminUserNameSelected();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -29,6 +34,7 @@ namespace Donnevoleur.Views.Administration
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
             UserManager userManager = new UserManager(userObject.connector);
             userManager.DelUser(userObject.adminUserIdSelected);
+            Response.Redirect("UserManagement.aspx");
         }
     }
 }

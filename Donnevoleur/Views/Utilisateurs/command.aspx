@@ -3,9 +3,11 @@
 <html 
     xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
-    <title></title>
+    <title>Centrale à béton</title>
+
 </head>
 <body>
+    <asp:Label ID="DynButton" ForeColor="red" runat="server" />
     <section id="menuBout" style="margin : 50px auto 20px 40%">
         <p>
             <a href="CreerCommande.aspx">
@@ -22,6 +24,7 @@
                 <input type="button" value="Historique des commandes" />
             </a>
         </p>
+        
         <p style="margin : 50px auto 370px auto">
     </p>
     </section>

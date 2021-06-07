@@ -16,7 +16,10 @@ namespace Donnevoleur
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            string referer = Request.UrlReferrer.ToString();
+            ButtonGenerate button = new ButtonGenerate();
+            button.createReturn(referer);
+            DynButton.Text = button.getButton();
         }
         protected void CommandCreate_Click(object sender, EventArgs e)
         {

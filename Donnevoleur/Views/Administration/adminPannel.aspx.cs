@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Donnevoleur.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,9 @@ namespace Donnevoleur.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ButtonGenerate button = new ButtonGenerate();
+            button.createDisconnect();
+            DynButton.Text = button.getButton();
         }
     }
 }

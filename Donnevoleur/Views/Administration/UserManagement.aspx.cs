@@ -14,7 +14,14 @@ namespace Donnevoleur.Views.Administration
         private UserManager userManager;
         private List<string> list;
         protected void Page_Load(object sender, EventArgs e)
-        { 
+        {
+
+            string referer = Request.UrlReferrer.ToString();
+            ButtonGenerate button = new ButtonGenerate();
+            button.createReturn(referer);
+            DynButton.Text = button.getButton();
+
+
             userObject = (SessionObject)HttpContext.Current.Session["ID"];
             userManager = new UserManager(userObject.connector);
             list = userManager.GetUserList();

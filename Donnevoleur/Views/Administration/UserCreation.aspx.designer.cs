@@ -15,6 +15,15 @@ namespace Donnevoleur.Views.Administration
     {
 
         /// <summary>
+        /// Contrôle DynButton.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DynButton;
+
+        /// <summary>
         /// Contrôle form3.
         /// </summary>
         /// <remarks>
