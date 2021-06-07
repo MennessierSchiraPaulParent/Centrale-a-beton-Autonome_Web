@@ -22,6 +22,7 @@ namespace Donnevoleur
         {
            
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
+            //HttpContext.Current.Session.Clear();
             CommandManager commandManager = new CommandManager(Int32.Parse(userObject.getUserID()), userObject.connector);
 
             commandManager.createCommand(Quantity.Text);

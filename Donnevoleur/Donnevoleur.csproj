@@ -149,7 +149,6 @@
   <ItemGroup>
     <Compile Include="Classes\BarCodeGenerator.cs" />
     <Compile Include="Classes\CommandManager.cs" />
-    <Compile Include="Classes\Mohamed.cs" />
     <Compile Include="Classes\SessionObject.cs" />
     <Compile Include="Views\Administration\UserAdministration.aspx.cs">
       <DependentUpon>UserAdministration.aspx</DependentUpon>
