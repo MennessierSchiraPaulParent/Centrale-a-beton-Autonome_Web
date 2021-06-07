@@ -16,6 +16,8 @@ namespace Donnevoleur.Views.Administration
             ButtonGenerate button = new ButtonGenerate();
             button.createReturn(referer);
             DynButton.Text = button.getButton();
+            button.createHomeAdmin();
+            DynButton2.Text = button.getButton();
         }
         protected void CreateUser_Click(object sender, EventArgs e)
         {

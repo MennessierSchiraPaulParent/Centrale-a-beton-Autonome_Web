@@ -23,7 +23,8 @@ namespace Donnevoleur.Classes
             Random rd = new Random();
             
             double randomRange2 = Math.Pow(10, (12 - Math.Floor(Math.Log10(idCommande) + 1)));
-            double code = Math.Abs(rd.NextDouble() * (randomRange2 - 0) + 0);
+            randomRange2 = randomRange2 / 10;
+            double code = Math.Abs(rd.NextDouble() * (((randomRange2 *10)-1) - randomRange2) + randomRange2);
             this.controlKeystr = controlkey(idCommande, code).ToString();
             this.barcodecode = Math.Round(code, 0).ToString() + idCommande.ToString();
             return this.barcodecode;

@@ -16,7 +16,7 @@ namespace Donnevoleur.Views
             ButtonGenerate button = new ButtonGenerate();
             button.createReturn(referer);
             DynButton.Text = button.getButton();
-            button.createHomeAdmin();
+            button.createHomeUser();
             DynButton2.Text = button.getButton();
 
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
