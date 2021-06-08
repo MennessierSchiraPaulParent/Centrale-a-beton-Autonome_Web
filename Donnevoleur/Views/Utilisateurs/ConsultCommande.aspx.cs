@@ -1,6 +1,7 @@
 ﻿using Donnevoleur.Classes;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,6 +11,7 @@ namespace Donnevoleur.Views
 {
     public partial class ConsultCommande : System.Web.UI.Page
     {
+        CommandManager commandManager;
         protected void Page_Load(object sender, EventArgs e)
         {
             string referer = Request.UrlReferrer.ToString();
@@ -20,13 +22,45 @@ namespace Donnevoleur.Views
             DynButton2.Text = button.getButton();
 
             SessionObject userObject = (SessionObject)HttpContext.Current.Session["ID"];
-            CommandManager commandManager = new CommandManager(Int32.Parse(userObject.getUserID()), userObject.connector);
+            commandManager = new CommandManager(Int32.Parse(userObject.getUserID()), userObject.connector);
 
             List<string> list = commandManager.getCommandList();
-            foreach(string listdisplay in list)
+            
+         
+            foreach (string listdisplay in list)
             {
-                Msg.Text += listdisplay +"<br>";
+                CheckBoxList2.Items.Add(listdisplay);
             }
+        }
+        protected void Validate_click(object sender, EventArgs e)
+        {
+            System.Drawing.Image image = null;
+            BarCodeGenerator barcode;
+            int idCommande = 0;
+            foreach (ListItem item in CheckBoxList2.Items)
+            {
+                if (item.Selected)
+                {
+                    idCommande = Int32.Parse(item.Text.Substring(item.Text.IndexOf(":") + 1));
+                    //barcode = new BarCodeGenerator(commandManager.getBarCode(idCommande));
+                    int test = (int)commandManager.getBarCode(idCommande);
+                    barcode = new BarCodeGenerator(commandManager.getBarCode(idCommande));
+
+                    //Msg.Text = barcode.barcodecode.ToString();
+                    //barcode = new BarCodeGenerator(commandManager.getBarCode(Int32.Parse(item.Text.Substring(item.Text.IndexOf(":")+1))));
+                    //barcode = new BarCodeGenerator(commandManager.getBarCode(Int32.Parse(item.Text.Substring(item.Text.IndexOf(":")+1))));
+                    image = barcode.barcodeImage;
+
+                }
+            }
+
+            Response.Clear();
+            Response.ContentType = "image/png";
+            Response.AppendHeader("Content-Disposition", "attachment; filename=downloadedFile.png");
+            byte[] bytes = (byte[])(new ImageConverter()).ConvertTo(image, typeof(byte[]));
+            Response.BinaryWrite(bytes);
+            Response.End();
+            Response.Redirect("ConsultCommande.aspx");
         }
     }
 }

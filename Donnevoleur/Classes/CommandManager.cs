@@ -114,5 +114,21 @@ namespace Donnevoleur
             return commandNumber;
         }
         
+        public long getBarCode(int commandId)
+        {
+            string barcode ="";
+            long final = 0;
+            connector.Connect();
+            string request = "SELECT CodeBarre FROM commandesencours WHERE idCommande =" + commandId;
+            MySqlCommand cmd = new MySqlCommand(request, connector.db);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                barcode = reader[0].ToString();
+                final  = Convert.ToInt64(barcode);
+            }
+            connector.Disconnect();
+            return final;
+        }
     }
 }

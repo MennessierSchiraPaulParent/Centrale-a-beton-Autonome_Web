@@ -17,6 +17,11 @@ namespace Donnevoleur.Classes
             Barcode b = new Barcode();
             this.barcodeImage = b.Encode(BarcodeLib.TYPE.EAN13, GenerateBareCode(idCommande), Color.Black, Color.White, 290, 120);
         }
+        public BarCodeGenerator(long idCommande)
+        {
+            Barcode b = new Barcode();
+            this.barcodeImage = b.Encode(BarcodeLib.TYPE.EAN13, idCommande.ToString().Substring(0,13), Color.Black, Color.White, 290, 120);
+        }
 
         public string GenerateBareCode(int idCommande)
         {
