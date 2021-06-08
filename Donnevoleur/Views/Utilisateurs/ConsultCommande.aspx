@@ -11,9 +11,7 @@
     <asp:Label ID="DynButton" ForeColor="red" runat="server" />
      <asp:Label ID="DynButton2" ForeColor="red" runat="server" />
     <form id="form1" runat="server">
-       <!-- <asp:CheckBoxList ID="CheckBoxList1" runat="server"> </asp:CheckBoxList> -->
         <asp:ListBox ID="CheckBoxList2" Rows="25" Width="200px" SelectionMode="Single"  runat="server"></asp:ListBox>
-       
         <asp:Button ID="Validate" runat="server" Text="Download BarCode" OnClick="Validate_click" />
         <asp:Label ID="Msg" ForeColor ="PaleVioletRed" runat ="server"></asp:Label>
     </form>

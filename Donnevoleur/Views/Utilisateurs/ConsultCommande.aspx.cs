@@ -42,13 +42,8 @@ namespace Donnevoleur.Views
                 if (item.Selected)
                 {
                     idCommande = Int32.Parse(item.Text.Substring(item.Text.IndexOf(":") + 1));
-                    //barcode = new BarCodeGenerator(commandManager.getBarCode(idCommande));
                     int test = (int)commandManager.getBarCode(idCommande);
                     barcode = new BarCodeGenerator(commandManager.getBarCode(idCommande));
-
-                    //Msg.Text = barcode.barcodecode.ToString();
-                    //barcode = new BarCodeGenerator(commandManager.getBarCode(Int32.Parse(item.Text.Substring(item.Text.IndexOf(":")+1))));
-                    //barcode = new BarCodeGenerator(commandManager.getBarCode(Int32.Parse(item.Text.Substring(item.Text.IndexOf(":")+1))));
                     image = barcode.barcodeImage;
 
                 }
