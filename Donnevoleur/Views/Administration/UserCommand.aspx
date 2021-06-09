@@ -16,7 +16,7 @@
         <asp:TextBox ID="Oui" runat="server"></asp:TextBox>
         <asp:CheckBoxList ID="CheckBoxList1" runat="server">
         </asp:CheckBoxList>
-        <asp:Button ID="Validate" runat="server" Text="Button" OnClick="Validate_click" />
+        <asp:Button ID="Validate" runat="server" Text="Delete" OnClick="Validate_click" />
     </form>
 </body>
 </html>
