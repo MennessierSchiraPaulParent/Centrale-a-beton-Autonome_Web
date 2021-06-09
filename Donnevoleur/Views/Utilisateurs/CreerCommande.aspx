@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head runat="server">
-    <title></title>
+    <title>Centrale béton</title>
 </head>
   <body>
       <asp:Label ID="DynButton" ForeColor="red" runat="server" />
