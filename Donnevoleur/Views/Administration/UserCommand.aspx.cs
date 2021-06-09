@@ -43,7 +43,7 @@ namespace Donnevoleur.Views.Administration
                 {
                     //Int32.Parse(item.Text.Substring(item.Text.IndexOf(":") + 1))
                     commandManager.deleteCommand(Int32.Parse(item.Text.Substring(item.Text.IndexOf(":") + 1)));
-                    Oui.Text = item.Text.Substring(item.Text.IndexOf(":") + 1);
+                    //Oui.Text = item.Text.Substring(item.Text.IndexOf(":") + 1);
                 }
             }
             //CheckBoxList1.ClearSelection();

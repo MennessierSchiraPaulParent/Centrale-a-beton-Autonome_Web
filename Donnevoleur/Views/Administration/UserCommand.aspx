@@ -11,9 +11,7 @@
     <asp:Label ID="DynButton" ForeColor="red" runat="server" />
     <asp:Label ID="DynButton2" ForeColor="red" runat="server" />
     <form id="form1" runat="server">
-        <div>
-        </div>
-        <asp:TextBox ID="Oui" runat="server"></asp:TextBox>
+        
         <asp:CheckBoxList ID="CheckBoxList1" runat="server">
         </asp:CheckBoxList>
         <asp:Button ID="Validate" runat="server" Text="Delete" OnClick="Validate_click" />
